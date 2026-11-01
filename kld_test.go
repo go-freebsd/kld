@@ -43,20 +43,20 @@ func TestFindModule(t *testing.T) {
 }
 
 func TestLoadAndUnload(t *testing.T) {
-	err := Load("aesni")
+	err := Load("nullfs")
 	if err != nil {
 		t.Error(err)
 	}
 
-	loaded, err := Loaded("aesni")
+	loaded, err := Loaded("nullfs")
 	if !loaded {
-		t.Error("aesni should have been loaded")
+		t.Error("nullfs should have been loaded")
 	}
 	if err != nil {
 		t.Error(err)
 	}
 
-	err = Unload("aesni", true)
+	err = Unload("nullfs", true)
 	if err != nil {
 		t.Error(err)
 		t.FailNow()
